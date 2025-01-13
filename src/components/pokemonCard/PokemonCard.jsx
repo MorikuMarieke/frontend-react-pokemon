@@ -3,7 +3,7 @@ import './PokemonCard.css'
 
 function PokemonCard({pokemon}) {
 
-    console.log(pokemon);
+    // console.log(pokemon);
 
     return (
         <article className="pokemon-card">

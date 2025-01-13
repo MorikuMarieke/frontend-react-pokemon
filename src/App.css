@@ -59,6 +59,7 @@ main .inner-container {
     display: flex;
     flex-direction: row;
     height: 1em;
+    color: var(--color-button);
     align-items: center;
     margin-top: 0.3em;
 }
@@ -66,4 +67,5 @@ main .inner-container {
 /*  4.3             Footer          */
 footer {
     padding: 1em;
+    color: var(--color-button);
 }

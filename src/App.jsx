@@ -15,11 +15,14 @@ function App() {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
+        const controller = new AbortController();
         async function fetchPokemon() {
             setLoading(true)
             try {
                 setError(null);
-                const response = await axios.get(`${API_BASE}pokemon/?limit=20&offset=${offset}`);
+                const response = await axios.get(`${API_BASE}pokemon/?limit=20&offset=${offset}`, {
+                    signal: controller.signal,
+                });
                 console.log(response.data);
                 const pokemonData = response.data.results;
                 const fullPokemonData = [];
@@ -41,6 +44,10 @@ function App() {
         }
 
         fetchPokemon();
+        // return () => controller.abort(); // Vraag aan degene die mijn code nakijkt: Is dit ook een mogelijkheid?
+        return function cleanup() {
+            controller.abort();
+        }
     }, [offset]);
 
     const handlePreviousClick = () => {
@@ -96,7 +103,7 @@ function App() {
             <footer className="outer-container">
                 <div className="inner-container">
                     <Smiley size={32} />
-                    <p>Banana</p>
+                    <p>Ba-na-na-na tu tu tu-du-du, sorry not sorry</p>
                 </div>
             </footer>
 
