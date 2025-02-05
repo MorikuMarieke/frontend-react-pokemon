@@ -1,1 +1,71 @@
 /*Schrijf hier jouw eigen CSS!*/
+
+/*  1.        Global styles         */
+/*Global styles defined in index.css*/
+
+/*  2.        Typography            */
+/*All main typography can be found in the index.css*/
+
+/*  3.        Layout                */
+body {
+    display: flex;
+    flex-direction: column;
+}
+/*  3.1             Reusables       */
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*  4.        Areas                 */
+/*  4.1             Header          */
+header .inner-container {
+    padding: 2em 0 1em 0;
+}
+
+.image-wrapper-pokemon-logo {
+    width: 50%;
+}
+
+.pokemon-logo {
+    width: 100%;
+}
+
+.button-container {
+    padding-top: 2em;
+}
+
+
+
+/*  4.2             Main            */
+main .inner-container {
+    flex: 0 1 1000px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0.8em;
+    margin: 0 1em 3em 1em;
+}
+
+.loading-message {
+    display: flex;
+    flex-direction: row;
+    height: 1em;
+    color: var(--color-button);
+    align-items: center;
+    margin-top: 0.3em;
+}
+
+/*  4.3             Footer          */
+footer {
+    padding: 1em;
+    color: var(--color-button);
+}
